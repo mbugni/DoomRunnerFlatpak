@@ -1,0 +1,67 @@
+app-id: io.github.Youda008.DoomRunner
+runtime: org.kde.Platform
+runtime-version: '5.15-22.08'
+sdk: org.kde.Sdk
+command: DoomRunner
+finish-args:
+  - --device=all
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+  - --share=ipc
+  - --share=network
+
+  # Based on GZDoom
+  # We redirect the original ~/.config/gzdoom
+  - --env=DOOMWADDIR=/app/share/games/doom
+  - --persist=.config/gzdoom
+
+  # Simpler way of preventing KDE related errors
+  - --env=KDE_FULL_SESSION=false
+cleanup:
+  - /include
+  - '*.a'
+  - '*.la'
+  - /lib/pkgconfig
+  - /lib/qt5/mkspecs
+  - /share/man
+  - /share/cmake
+modules:
+
+  - shared-modules/gzdoom/gzdoom.json
+
+  - name: launcher
+    buildsystem: simple
+    sources:
+      - type: script
+        commands:
+          - gzdoom +fluid_patchset /app/share/sounds/sf2/gzdoom.sf2 -file lights.pk3 brightmaps.pk3 "$@"
+        dest-filename: gzdoom.sh
+    build-commands:
+      - install -D gzdoom.sh /app/bin/gzdoom.sh
+
+  - name: doomrunner-build
+    buildsystem: qmake
+    builddir: true
+    config-opts:
+      - CONFIG+=release
+    sources:
+      - type: git
+        url: https://github.com/Youda008/DoomRunner
+        tag: v1.7.2
+      - type: patch
+        path: DoomRunner.patch
+
+  - name: doomrunner-desktop
+    buildsystem: simple
+    sources:
+      - type: file
+        path: io.github.Youda008.DoomRunner.appdata.xml
+      - type: file
+        path: io.github.Youda008.DoomRunner.desktop
+      - type: file
+        path: io.github.Youda008.DoomRunner.png
+    build-commands:
+      - install -Dm 644 io.github.Youda008.DoomRunner.appdata.xml -t /app/share/appdata
+      - install -Dm 644 io.github.Youda008.DoomRunner.desktop -t /app/share/applications
+      - install -Dm 644 io.github.Youda008.DoomRunner.png -t /app/share/icons/hicolor/128x128/apps

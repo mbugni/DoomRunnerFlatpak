@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Doom Runner
+Comment=Preset-oriented graphical launcher of ZDoom and derivatives
+Comment[it]=Avviatore grafico per configurazioni di ZDoom e derivati
+Exec=DoomRunner
+Icon=io.github.Youda008.DoomRunner
+Type=Application
+Categories=Game
+X-Desktop-File-Install-Version=0.26
+Keywords=first;person;shooter;doom;
