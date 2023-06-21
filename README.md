@@ -52,7 +52,6 @@ $ flatpak run io.github.Youda008.DoomRunner
 ```
 
 #### Tips
-- Select the `gzdoom.sh` engine from the `/app/bin` folder
 - Put data files in `~/var/app/io.github.Youda008.DoomRunner/data`
 
 #### GZDoom options

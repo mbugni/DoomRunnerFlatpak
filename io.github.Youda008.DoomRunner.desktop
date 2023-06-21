@@ -2,7 +2,7 @@
 Name=Doom Runner
 Comment=Preset-oriented graphical launcher of ZDoom and derivatives
 Comment[it]=Avviatore grafico per configurazioni di ZDoom e derivati
-Exec=DoomRunner
+Exec=doomrunner.sh
 Icon=io.github.Youda008.DoomRunner
 Type=Application
 Categories=Game
