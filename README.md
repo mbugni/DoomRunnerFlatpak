@@ -2,7 +2,6 @@
 <img align="left" style="margin: 0px 15px 0px 0px;" src="DoomRunner.64.png" alt="Doom Runner Icon" />
 
 # Doom Runner on Flatpak
-### &nbsp;
 
 </div>
 <p>&nbsp;</p>

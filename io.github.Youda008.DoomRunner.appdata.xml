@@ -8,6 +8,7 @@
   <project_license>GPLv3</project_license>
   <developer_name>Youda008</developer_name>
   <url type="homepage">https://github.com/Youda008/DoomRunner</url>
+  <url type="bugtracker">https://github.com/Youda008/DoomRunner/issues</url>
   <description>
     <p>
       Doom Runner is yet another launcher of ZDoom and derivatives with graphical user interface.
