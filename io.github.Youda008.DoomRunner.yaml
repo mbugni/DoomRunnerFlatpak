@@ -10,6 +10,7 @@ finish-args:
   - --socket=pulseaudio
   - --share=ipc
   - --share=network
+  - --talk-name=org.freedesktop.Flatpak
 
   # Based on GZDoom
   # We redirect the original ~/.config/gzdoom
@@ -52,7 +53,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Youda008/DoomRunner
-        tag: v1.7.2
+        branch: flatpak-snap-support
       - type: patch
         path: DoomRunner.patch
 
