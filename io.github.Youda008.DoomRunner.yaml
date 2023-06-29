@@ -49,13 +49,11 @@ modules:
     buildsystem: qmake
     builddir: true
     config-opts:
-      - CONFIG+=release
+      - CONFIG+=flatpak
     sources:
       - type: git
         url: https://github.com/Youda008/DoomRunner
         branch: flatpak-snap-support
-      - type: patch
-        path: DoomRunner.patch
 
   # Prepare DoomRunner initial configs
   - name: doomrunner-config
