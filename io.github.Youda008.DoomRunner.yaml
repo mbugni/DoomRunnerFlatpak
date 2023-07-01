@@ -10,7 +10,11 @@ finish-args:
   - --socket=pulseaudio
   - --share=ipc
   - --share=network
+
+  # Allow to execute host engines
   - --talk-name=org.freedesktop.Flatpak
+  # Allow to access game files (for .wad and .pk3)
+  - --filesystem=host
 
   # Based on GZDoom
   # We redirect the original ~/.config/gzdoom

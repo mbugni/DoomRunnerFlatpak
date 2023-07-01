@@ -1,10 +1,12 @@
 {
     "IWADs": {
         "auto_update": true,
-        "directory": "${XDG_DATA_HOME}",
-        "search_subdirs": true
+        "default_iwad": "",
+        "directory": "${HOME}",
+        "search_subdirs": false
     },
     "app_style": null,
+    "ask_for_sandbox_permissions": true,
     "audio_options": {
         "no_music": false,
         "no_sfx": false,
@@ -14,6 +16,7 @@
     "close_on_launch": false,
     "color_scheme": "default",
     "engines": {
+        "default_engine": "GZDoom",
         "engine_list": [
             {
                 "config_dir": "${XDG_CONFIG_HOME}",
@@ -34,18 +37,12 @@
         "skill_num": 1
     },
     "geometry": {
-        "height": 832,
-        "width": 812
+        "height": 800,
+        "width": 825
     },
     "global_options": {
         "additional_args": "",
         "use_preset_name_as_dir": true
-    },
-    "maps": {
-        "directory": "${XDG_DATA_HOME}"
-    },
-    "mods": {
-        "directory": "${XDG_DATA_HOME}"
     },
     "launch_options": {
         "demo_file_record": "",
@@ -54,6 +51,13 @@
         "map_name": "",
         "map_name_demo": "",
         "save_file": ""
+    },
+    "maps": {
+        "directory": "${HOME}"
+    },
+    "mods": {
+        "directory": "${HOME}",
+        "show_icons": true
     },
     "multiplayer_options": {
         "frag_limit": 0,
@@ -81,66 +85,25 @@
                 "save_dir": "${XDG_CONFIG_HOME}/Default",
                 "screenshot_dir": "${XDG_CONFIG_HOME}/Default"
             },
-            "audio_options": {
-                "no_music": false,
-                "no_sfx": false,
-                "no_sound": false
-            },
             "compatibility_options": {
                 "compat_level": -1,
                 "compatflags1": 0,
                 "compatflags2": 0
             },
-            "gameplay_options": {
-                "allow_cheats": false,
-                "dmflags1": 0,
-                "dmflags2": 0,
-                "fast_monsters": false,
-                "monsters_respawn": false,
-                "no_monsters": false,
-                "skill_idx": 1,
-                "skill_num": 1
-            },
-            "launch_options": {
-                "demo_file_record": "",
-                "demo_file_replay": "",
-                "launch_mode": 0,
-                "map_name": "",
-                "map_name_demo": "",
-                "save_file": ""
-            },
             "mods": [
             ],
-            "multiplayer_options": {
-                "frag_limit": 0,
-                "game_mode": 0,
-                "host_name": "",
-                "is_multiplayer": false,
-                "mult_role": 0,
-                "net_mode": 0,
-                "player_count": 2,
-                "port": 5029,
-                "team_damage": 0,
-                "time_limit": 0
-            },
             "name": "Default",
             "selected_IWAD": "",
             "selected_config": "",
             "selected_engine": "/app/bin/GZDoom",
             "selected_mappacks": [
-            ],
-            "video_options": {
-                "monitor_idx": 0,
-                "resolution_x": 0,
-                "resolution_y": 0,
-                "show_fps": false
-            }
+            ]
         }
     ],
     "selected_preset": "Default",
     "show_engine_output": true,
     "use_absolute_paths": true,
-    "version": "1.7.1",
+    "version": "1.7.2",
     "video_options": {
         "monitor_idx": 0,
         "resolution_x": 0,
