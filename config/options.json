@@ -2,7 +2,7 @@
     "IWADs": {
         "auto_update": true,
         "default_iwad": "",
-        "directory": "${HOME}",
+        "directory": "${XDG_DATA_HOME}",
         "search_subdirs": false
     },
     "app_style": null,
@@ -16,7 +16,7 @@
     "close_on_launch": false,
     "color_scheme": "default",
     "engines": {
-        "default_engine": "GZDoom",
+        "default_engine": "/app/bin/GZDoom",
         "engine_list": [
             {
                 "config_dir": "${XDG_CONFIG_HOME}",
@@ -53,10 +53,10 @@
         "save_file": ""
     },
     "maps": {
-        "directory": "${HOME}"
+        "directory": "${XDG_DATA_HOME}"
     },
     "mods": {
-        "directory": "${HOME}",
+        "directory": "${XDG_DATA_HOME}",
         "show_icons": true
     },
     "multiplayer_options": {

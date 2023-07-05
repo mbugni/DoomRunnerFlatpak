@@ -13,7 +13,7 @@ finish-args:
 
   # Allow to execute host engines
   - --talk-name=org.freedesktop.Flatpak
-  # Allow to access game files (for .wad and .pk3)
+  # Allow to access game files (eg .wad and .pk3)
   - --filesystem=host
 
   # Based on GZDoom
