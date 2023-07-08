@@ -13,8 +13,8 @@ finish-args:
 
   # Allow to execute host engines
   - --talk-name=org.freedesktop.Flatpak
-  # Allow to access game files (eg .wad and .pk3)
-  - --filesystem=host
+  # Allow to access game files (eg .wad and .pk3) and saving configurations
+  - --filesystem=home
 
   # Based on GZDoom
   # We redirect the original ~/.config/gzdoom
@@ -53,11 +53,16 @@ modules:
     buildsystem: qmake
     builddir: true
     config-opts:
-      - CONFIG+=flatpak
+      - CONFIG+=release flatpak
+    make-install-args:
+      - INSTALL_ROOT+=/app/tmp
     sources:
       - type: git
         url: https://github.com/Youda008/DoomRunner
-        branch: flatpak-snap-support
+        branch: master
+    post-install:
+      - mv /app/tmp/usr/bin/DoomRunner /app/bin/DoomRunner
+      - rm /app/tmp -rf
 
   # Prepare DoomRunner initial configs
   - name: doomrunner-config

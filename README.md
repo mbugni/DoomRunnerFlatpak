@@ -2,7 +2,7 @@
 <img align="left" style="margin: 0px 15px 0px 0px;" src="DoomRunner.64.png" alt="Doom Runner Icon" />
 
 # Doom Runner on Flatpak
-
+&nbsp;
 </div>
 
 This project contains files to build [Doom Runner](https://github.com/Youda008/DoomRunner) as a Flatpak app.
@@ -51,7 +51,12 @@ $ flatpak run io.github.Youda008.DoomRunner
 - Have fun!
 
 #### GZDoom options
- GZDoom engine defaults are in file `~/.var/app/io.github.Youda008.DoomRunner/.config/gzdoom/gzdoom.ini`
+GZDoom engine defaults are in file `~/.var/app/io.github.Youda008.DoomRunner/.config/gzdoom/gzdoom.ini`
+
+## Custom folders
+You can choose different folders in you `$HOME` directory for data and configs, just select them trough the "Initial setup" menu.
+For example: `$HOME/doom/data` for WAD files and `$HOME/doom/config` for configs.
+If you want to use other folders outside your home directory the you have to extend Flatpak permissions in order to access them.
 
 ## Advanced usage
 
@@ -79,7 +84,7 @@ Add the engine to the Doom Runner list:
 #### 4 - Provide game files
 Put data files in the shared folder (eg `~/doom/data`), so both Doom Runner and the engine can access them.
 
-Your shared folder should look like this
+The shared folder should look like this:
 ```
 ~/doom/
 ├── config
