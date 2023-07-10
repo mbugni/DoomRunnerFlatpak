@@ -54,15 +54,11 @@ modules:
     builddir: true
     config-opts:
       - CONFIG+=release flatpak
-    make-install-args:
-      - INSTALL_ROOT+=/app/tmp
+      - INSTALL_DIR+=/app/bin
     sources:
       - type: git
         url: https://github.com/Youda008/DoomRunner
         branch: master
-    post-install:
-      - mv /app/tmp/usr/bin/DoomRunner /app/bin/DoomRunner
-      - rm /app/tmp -rf
 
   # Prepare DoomRunner initial configs
   - name: doomrunner-config
@@ -80,7 +76,7 @@ modules:
     sources:
       - type: script
         commands:
-          - "app_config_dir=$XDG_CONFIG_HOME/DoomRunner"
+          - "app_config_dir=$XDG_DATA_HOME/DoomRunner"
           - "[ ! -d $app_config_dir ] && mkdir -p $app_config_dir"
           - "[ ! -f $app_config_dir/options.json ] && envsubst < /app/share/config/options.json > $app_config_dir/options.json"
           - "exec /app/bin/DoomRunner"

@@ -1,7 +1,7 @@
 <div>
 <img align="left" style="margin: 0px 15px 0px 0px;" src="DoomRunner.64.png" alt="Doom Runner Icon" />
 
-# Doom Runner on Flatpak
+# Doom Runner on 📦 Flatpak
 &nbsp;
 </div>
 
@@ -56,7 +56,7 @@ GZDoom engine defaults are in file `~/.var/app/io.github.Youda008.DoomRunner/.co
 ## Custom folders
 You can choose different folders in you `$HOME` directory for data and configs, just select them trough the "Initial setup" menu.
 For example: `$HOME/doom/data` for WAD files and `$HOME/doom/config` for configs.
-If you want to use other folders outside your home directory the you have to extend Flatpak permissions in order to access them.
+If you want to use other folders outside your home directory, then you have to extend Flatpak permissions in order to access them.
 
 ## Advanced usage
 
