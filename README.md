@@ -1,7 +1,7 @@
 <div>
 <img align="left" style="margin: 0px 15px 0px 0px;" src="DoomRunner.64.png" alt="Doom Runner Icon" />
 
-# Doom Runner on 📦 Flatpak
+# Doom Runner on Flatpak
 &nbsp;
 </div>
 
@@ -45,7 +45,7 @@ $ flatpak run io.github.Youda008.DoomRunner
 ```
 
 ## Basic usage
-- Put data files in `~/.var/app/io.github.Youda008.DoomRunner/data`.
+- Put data files in `~/.var/app/io.github.Youda008.DoomRunner/data/share`.
 - Choose your favorite combination from main window
 - Press the "Launch!" button
 - Have fun!
@@ -55,7 +55,7 @@ GZDoom engine defaults are in file `~/.var/app/io.github.Youda008.DoomRunner/.co
 
 ## Custom folders
 You can choose different folders in you `$HOME` directory for data and configs, just select them trough the "Initial setup" menu.
-For example: `$HOME/doom/data` for WAD files and `$HOME/doom/config` for configs.
+For example: `$HOME/doom/share` for game files and `$HOME/doom/config` for configs.
 If you want to use other folders outside your home directory, then you have to extend Flatpak permissions in order to access them.
 
 ## Advanced usage
@@ -64,13 +64,13 @@ If you want to use other folders outside your home directory, then you have to e
 Let's assume you want to use an engine with app identifier `my.app.Engine`. Remember that Flatpak apps are sandboxed: the engine cannot access to Doom Runner files and vice versa.
 
 #### 1 - Grant permissions
-Ensure the engine app can access to a shared folder (eg `~/doom`):
+Ensure that both the engine app and Doom Runner can access to a common folder (eg `~/doom`):
 ```shell
 $ flatpak override my.app.Engine --filesystem=$HOME/doom
 ```
 
 #### 2 - Create a launcher script
-Create a launcher script (eg `~/doom/engine/myapp.sh`) in the shared folder like the following:
+Create a launcher script (eg `~/doom/engine/myapp.sh`) in the common folder like the following:
 ```shell
 #!/usr/bin/bash
 exec /usr/bin/flatpak run my.app.Engine "$@"
@@ -82,15 +82,15 @@ Add the engine to the Doom Runner list:
 - provide an existing "Config directory" (eg `~/doom/config`)
 
 #### 4 - Provide game files
-Put data files in the shared folder (eg `~/doom/data`), so both Doom Runner and the engine can access them.
+Put data files in the common folder (eg `~/doom/share`), so both Doom Runner and the engine can access them.
 
-The shared folder should look like this:
+The common folder should look like this:
 ```
 ~/doom/
 ├── config
 │   └── myapp
 │       └── doomsav0.dsg
-├── data
+├── share
 │   ├── freedoom1.wad
 │   └── freedoom2.wad
 └── engine

@@ -2,7 +2,7 @@
     "IWADs": {
         "auto_update": true,
         "default_iwad": "",
-        "directory": "${XDG_DATA_HOME}",
+        "directory": "${XDG_DATA_HOME}/share",
         "search_subdirs": false
     },
     "app_style": null,
@@ -53,10 +53,10 @@
         "save_file": ""
     },
     "maps": {
-        "directory": "${XDG_DATA_HOME}"
+        "directory": "${XDG_DATA_HOME}/share"
     },
     "mods": {
-        "directory": "${XDG_DATA_HOME}",
+        "directory": "${XDG_DATA_HOME}/share",
         "show_icons": true
     },
     "multiplayer_options": {
@@ -103,7 +103,7 @@
     "selected_preset": "Default",
     "show_engine_output": true,
     "use_absolute_paths": true,
-    "version": "1.7.2",
+    "version": "1.7.3",
     "video_options": {
         "monitor_idx": 0,
         "resolution_x": 0,
