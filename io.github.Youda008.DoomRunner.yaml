@@ -59,6 +59,17 @@ modules:
       - type: git
         url: https://github.com/Youda008/DoomRunner
         branch: master
+      - type: file
+        path: io.github.Youda008.DoomRunner.appdata.xml
+    post-install:
+      # Patch desktop file using Flatpak references
+      - sed -i 's/^Exec=.*/Exec=/g' $FLATPAK_BUILDER_BUILDDIR/Install/XDG/DoomRunner.desktop
+      - sed -i 's/^Icon=.*/Icon='${FLATPAK_ID}'/g' $FLATPAK_BUILDER_BUILDDIR/Install/XDG/DoomRunner.desktop
+      # Install desktop file and icons
+      - install -Dm 644 $FLATPAK_BUILDER_BUILDDIR/io.github.Youda008.DoomRunner.appdata.xml -t /app/share/appdata
+      - install -Dm 644 $FLATPAK_BUILDER_BUILDDIR/Install/XDG/DoomRunner.desktop /app/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm 644 $FLATPAK_BUILDER_BUILDDIR/Install/XDG/DoomRunner.64x64.png /app/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png
+      - install -Dm 644 $FLATPAK_BUILDER_BUILDDIR/Install/XDG/DoomRunner.128x128.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
 
   # Prepare DoomRunner initial configs
   - name: doomrunner-config
@@ -85,21 +96,3 @@ modules:
         dest-filename: doomrunner.sh
     build-commands:
       - install -D doomrunner.sh /app/bin/doomrunner.sh
-
-  # Install desktop files
-  - name: doomrunner-desktop
-    buildsystem: simple
-    sources:
-      - type: file
-        path: io.github.Youda008.DoomRunner.appdata.xml
-      - type: file
-        path: io.github.Youda008.DoomRunner.desktop
-      - type: file
-        path: DoomRunner.64.png
-      - type: file
-        path: DoomRunner.128.png
-    build-commands:
-      - install -Dm 644 io.github.Youda008.DoomRunner.appdata.xml -t /app/share/appdata
-      - install -Dm 644 io.github.Youda008.DoomRunner.desktop -t /app/share/applications
-      - install -Dm 644 DoomRunner.64.png /app/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png
-      - install -Dm 644 DoomRunner.128.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png

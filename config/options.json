@@ -3,7 +3,7 @@
         "auto_update": true,
         "default_iwad": "",
         "directory": "${XDG_DATA_HOME}/share",
-        "search_subdirs": false
+        "search_subdirs": true
     },
     "app_style": null,
     "ask_for_sandbox_permissions": true,
