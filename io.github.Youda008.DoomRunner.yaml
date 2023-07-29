@@ -12,11 +12,11 @@ finish-args:
   - --share=network
   # Allow to execute host engines
   - --talk-name=org.freedesktop.Flatpak
-  # Allow to access game files (eg .wad and .pk3) and saving configurations
-  - --filesystem=home
+  # Allow to access game files (eg .wad and .pk3)
+  - --filesystem=home:ro
   # Based on GZDoom
-  # We redirect the original ~/.config/gzdoom
   - --env=DOOMWADDIR=/app/share/games/doom
+  # Redirect the original ~/.config/gzdoom
   - --persist=.config/gzdoom
   # Simpler way of preventing KDE related errors
   - --env=KDE_FULL_SESSION=false
@@ -40,7 +40,8 @@ modules:
     sources:
       - type: script
         commands:
-          - exec gzdoom +fluid_patchset /app/share/sounds/sf2/gzdoom.sf2 -file lights.pk3 brightmaps.pk3 "$@"
+          # Use config file ${XDG_CONFIG_HOME}/gzdoom.ini
+          - exec gzdoom +fluid_patchset /app/share/sounds/sf2/gzdoom.sf2 -file lights.pk3 brightmaps.pk3 -config ${XDG_CONFIG_HOME}/gzdoom.ini "$@"
         dest-filename: gzdoom.sh
     build-commands:
       - install -D gzdoom.sh /app/bin/GZDoom
@@ -55,7 +56,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Youda008/DoomRunner
-        branch: master
+        tag: v1.8.0
       - type: file
         path: io.github.Youda008.DoomRunner.appdata.xml
     post-install:

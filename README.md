@@ -51,7 +51,7 @@ $ flatpak run io.github.Youda008.DoomRunner
 - Have fun!
 
 #### GZDoom options
-GZDoom engine defaults are in file `~/.var/app/io.github.Youda008.DoomRunner/.config/gzdoom/gzdoom.ini`
+Embedded GZDoom engine configs are in `~/.var/app/io.github.Youda008.DoomRunner/config/gzdoom.ini`
 
 ## Custom folders
 You can choose different folders in you `$HOME` directory for data and configs, just select them trough the "Initial setup" menu.

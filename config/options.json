@@ -20,6 +20,7 @@
         "engine_list": [
             {
                 "config_dir": "${XDG_CONFIG_HOME}",
+                "data_dir": "${XDG_DATA_HOME}",
                 "family": "ZDoom",
                 "name": "GZDoom",
                 "path": "/app/bin/GZDoom"
@@ -42,6 +43,7 @@
     },
     "global_options": {
         "additional_args": "",
+        "env_vars": {},
         "use_preset_name_as_dir": true
     },
     "launch_options": {
@@ -82,28 +84,27 @@
         {
             "additional_args": "",
             "alternative_paths": {
-                "save_dir": "${XDG_CONFIG_HOME}/Default",
-                "screenshot_dir": "${XDG_CONFIG_HOME}/Default"
+                "save_dir": "${XDG_DATA_HOME}/Default",
+                "screenshot_dir": "${XDG_DATA_HOME}/Default"
             },
             "compatibility_options": {
                 "compat_level": -1,
                 "compatflags1": 0,
                 "compatflags2": 0
             },
-            "mods": [
-            ],
+            "env_vars": {},
+            "mods": [],
             "name": "Default",
             "selected_IWAD": "",
             "selected_config": "",
             "selected_engine": "/app/bin/GZDoom",
-            "selected_mappacks": [
-            ]
+            "selected_mappacks": []
         }
     ],
     "selected_preset": "Default",
     "show_engine_output": true,
     "use_absolute_paths": true,
-    "version": "1.7.3",
+    "version": "1.8.0",
     "video_options": {
         "monitor_idx": 0,
         "resolution_x": 0,
