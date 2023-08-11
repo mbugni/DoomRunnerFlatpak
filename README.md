@@ -1,9 +1,8 @@
-<div>
-<img align="left" style="margin: 0px 15px 0px 0px;" src="https://raw.githubusercontent.com/Youda008/DoomRunner/master/Install/XDG/DoomRunner.64x64.png" alt="Doom Runner Icon" />
+## This project is discontinued and will be removed, since the app is on Flathub now
 
-# Doom Runner on Flatpak
-&nbsp;
-</div>
+
+[![Download DoomRunner](https://dl.flathub.org/assets/badges/flathub-badge-en.png 'Download DoomRunner')](https://flathub.org/apps/io.github.Youda008.DoomRunner)
+
 
 This project contains files to build [Doom Runner](https://github.com/Youda008/DoomRunner) as a Flatpak app.
 
